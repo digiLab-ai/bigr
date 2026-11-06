@@ -70,8 +70,7 @@ pytest                                # tiny in-memory backbone, figure renders,
 
 Everything here runs from the cached summaries under `assets/runs` (about 60 MB); no
 checkpoint or dataset is needed. The tests include the deterministic limit (S = 1,
-sigma = 0 equals the TRM) and check that the register rebuild is byte-identical to the
-committed copy.
+sigma = 0 equals the TRM) and check that the register rebuilds to the committed values.
 
 ## Data and checkpoints
 
