@@ -1,0 +1,15 @@
+# requirements.txt records the environment the paper's results were produced with, so
+# Dependabot opens no version-update pull requests for Python packages; security updates
+# are governed separately (Settings -> Code security) and still arrive. GitHub Actions
+# version bumps are allowed: they only keep CI current.
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 0
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
