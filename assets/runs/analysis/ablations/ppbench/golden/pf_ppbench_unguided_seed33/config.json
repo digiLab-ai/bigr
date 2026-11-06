@@ -1,0 +1,23 @@
+{
+  "profile": "ppbench",
+  "checkpoint": "data/ppbench/checkpoints/last.ckpt",
+  "data_dir": "data/ppbench",
+  "split": "test",
+  "out": "assets/runs/ppbench/pf_ppbench_unguided_seed33",
+  "device": "cuda",
+  "particles": 16,
+  "total_steps": 48,
+  "sigma": 0.3,
+  "beta": 0.0,
+  "ess_threshold": 0.5,
+  "seed": 33,
+  "batch_size": 14,
+  "n_batches": 5,
+  "smoke": false,
+  "save_particle_scores": null,
+  "save_particle_trace": "assets/runs/ppbench/pf_ppbench_unguided_seed33",
+  "checkpoint_all_steps": false,
+  "num_folds": 1,
+  "fold_seed": 33,
+  "disable_step_cpu_metrics": false
+}

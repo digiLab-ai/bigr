@@ -1,0 +1,18 @@
+# PPBench (Pencil Puzzle Bench): four puzzle types (sudoku, lightup, nurikabe, tapa)
+# merged into one 10x10 grid task; vocab 115, seq_len 100 (read from metadata.json).
+# Splits shipped under data/ppbench: train 33,460 / val 253 / test ("golden") 42.
+_target_: trm.nn.data.SudokuDataModule
+_recursive_: false
+batch_size: ${timekeeping.batch_size}
+num_workers: ${timekeeping.num_workers}
+
+num_train_puzzles: 0
+num_val_puzzles: 0
+num_test_puzzles: 0
+grid_size: 10
+max_grid_size: 10
+min_givens: null
+max_givens: null
+seed: 42
+data_dir: ./data/ppbench
+pad_value: 0

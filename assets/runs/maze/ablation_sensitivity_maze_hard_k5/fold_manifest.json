@@ -1,0 +1,71 @@
+{
+  "fold_seed": 31,
+  "num_folds": 5,
+  "outputs": {
+    "resample_summary": "resample/summary_summary.csv",
+    "step_metrics_summary": {
+      "no_resample": "resample/no_resample/step_metrics_summary.csv",
+      "tau_0.30": "resample/tau_0.30/step_metrics_summary.csv",
+      "tau_0.50": "resample/tau_0.50/step_metrics_summary.csv",
+      "tau_0.50_rejuv": "resample/tau_0.50_rejuv/step_metrics_summary.csv",
+      "tau_0.70": "resample/tau_0.70/step_metrics_summary.csv",
+      "tau_0.70_rejuv": "resample/tau_0.70_rejuv/step_metrics_summary.csv",
+      "tau_1.00": "resample/tau_1.00/step_metrics_summary.csv"
+    },
+    "stress_summary": "resample_stress_results_summary.csv"
+  },
+  "resample_folds": [
+    {
+      "fold_index": 0,
+      "num_batches": 13,
+      "num_examples": 199
+    },
+    {
+      "fold_index": 1,
+      "num_batches": 13,
+      "num_examples": 199
+    },
+    {
+      "fold_index": 2,
+      "num_batches": 13,
+      "num_examples": 198
+    },
+    {
+      "fold_index": 3,
+      "num_batches": 13,
+      "num_examples": 198
+    },
+    {
+      "fold_index": 4,
+      "num_batches": 13,
+      "num_examples": 198
+    }
+  ],
+  "stress_folds": [
+    {
+      "fold_index": 0,
+      "num_batches": 13,
+      "num_examples": 199
+    },
+    {
+      "fold_index": 1,
+      "num_batches": 13,
+      "num_examples": 199
+    },
+    {
+      "fold_index": 2,
+      "num_batches": 13,
+      "num_examples": 198
+    },
+    {
+      "fold_index": 3,
+      "num_batches": 13,
+      "num_examples": 198
+    },
+    {
+      "fold_index": 4,
+      "num_batches": 13,
+      "num_examples": 198
+    }
+  ]
+}

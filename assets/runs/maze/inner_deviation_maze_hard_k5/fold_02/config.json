@@ -1,0 +1,34 @@
+{
+  "profile": "maze_hard",
+  "checkpoint": "data/maze_hard/checkpoints/last.ckpt",
+  "data_dir": "data/maze_hard/dataset/maze-30x30-hard-1k",
+  "out": "assets/runs/inner_deviation_maze_hard",
+  "device": "cuda",
+  "n_puzzles": 1000,
+  "outer_steps": 48,
+  "n_samples": 16,
+  "sigma_values": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.5,
+    0.8,
+    1.3
+  ],
+  "tube_alphas": [
+    0.5,
+    1.0,
+    1.25,
+    1.5,
+    2.0
+  ],
+  "n_probes": 16,
+  "lipschitz_method": "probes",
+  "power_iter_steps": 20,
+  "batch_size": 16,
+  "seed": 31,
+  "num_folds": 5,
+  "fold_seed": 31,
+  "smoke": false
+}

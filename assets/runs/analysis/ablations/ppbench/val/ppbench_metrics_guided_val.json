@@ -1,0 +1,49 @@
+{
+  "split": "val",
+  "method": "terminal map_preds / trm_preds vs dataset labels (ignore_label_id masked), hash-join alignment as eval_ppbench_suite.py; validated by reproducing the golden guided 74.8 / per-type numbers exactly (2026-07-25)",
+  "runs": [
+    "pf_ppbench_seed31",
+    "pf_ppbench_seed32",
+    "pf_ppbench_seed33",
+    "pf_ppbench_seed34",
+    "pf_ppbench_seed35"
+  ],
+  "guided_exact_agg": {
+    "mean": 0.7794466403162055,
+    "std": 0.0064947338834604774
+  },
+  "trm_exact_agg": {
+    "mean": 0.6245059288537549,
+    "std": 0.0
+  },
+  "per_type": {
+    "sudoku": {
+      "guided": {
+        "mean": 0.7431578947368421,
+        "std": 0.012001846579990925
+      },
+      "trm": 0.47368421052631576
+    },
+    "lightup": {
+      "guided": {
+        "mean": 0.946031746031746,
+        "std": 0.00869400884928832
+      },
+      "trm": 0.9365079365079365
+    },
+    "nurikabe": {
+      "guided": {
+        "mean": 0.7880597014925373,
+        "std": 0.01946030568717209
+      },
+      "trm": 0.6865671641791045
+    },
+    "tapa": {
+      "guided": {
+        "mean": 0.5071428571428571,
+        "std": 0.029880715233359827
+      },
+      "trm": 0.2857142857142857
+    }
+  }
+}

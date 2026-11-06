@@ -1,0 +1,27 @@
+{
+  "batch_size": 16,
+  "beta": 0.25,
+  "checkpoint": "data/sudoku_extreme/checkpoints/last.ckpt",
+  "data_dir": "data/sudoku_extreme/dataset/sudoku_extreme",
+  "device": "cuda",
+  "disable_step_cpu_metrics": false,
+  "ess_threshold": 0.3,
+  "fold_seed": 31,
+  "kfold": false,
+  "n_batches": 32,
+  "num_folds": 3,
+  "out": "assets/runs/analysis/e1c_frontier_sudoku",
+  "particles": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "profile": "sudoku_extreme",
+  "seed": 31,
+  "sigma": 0.3,
+  "smoke": false,
+  "split": "test",
+  "total_steps": 48
+}

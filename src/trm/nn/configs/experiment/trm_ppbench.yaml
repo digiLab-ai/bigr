@@ -1,0 +1,67 @@
+# @package _global_
+#
+# TRM backbone on PPBench (Pencil Puzzle Bench; PTRM arXiv:2605.19943 §5, App. A.3).
+# One merged multi-type dataset: sudoku (9x9->pad->10x10), lightup, nurikabe, tapa (all
+# 10x10), seq_len 100, single-target, exact-match metric. Splits ship under data/ppbench.
+#
+# Architecture = TRM-Att (PTRM App. A.2: "we use TRM-Att for ... PPBench; hyperparameters
+# unchanged from TRM"). The repo's TRM-Att reference is trm_maze.yaml, so this mirrors it:
+# use_mlp_t=false, pos_emb_type="1d" (RoPE), puzzle_emb_dim=512 / len=16, hidden_size 512,
+# H_cycles=3, L_cycles=4, num_layers=2. Uses the built-in exact_accuracy metric (no custom
+# callback — single-answer puzzles, no coverage/constraint metric).
+
+defaults:
+  - override /data: ppbench
+  - override /model: trm
+  - override /callbacks: default
+  - override /trainer: gpu
+
+tags: ["ppbench", "trm", "ptrm", "multi-type"]
+
+timekeeping:
+  max_epochs: 10000
+  batch_size: 768
+  num_workers: 0
+
+model_tuning:
+  learning_rate: 1e-4
+  learning_rate_emb: 1e-4
+  warmup_steps: 2000
+  weight_decay: 1.0
+  lr_min_ratio: 1.0
+  num_heads: 8
+  halt_exploration_prob: 0.1
+  N_supervision: 16         # standard TRM (PTRM baseline is D=16; depth scaled at inference only)
+  N_supervision_val: 16
+  H_cycles: 3
+  L_cycles: 4
+  num_layers: 2
+  puzzle_emb_dim: 512       # TRM-Att default (matches trm_maze); single global id (num_puzzle_identifiers=1)
+  puzzle_emb_len: 16
+  hidden_size: 512
+  ffn_expansion: 4
+  rope_theta: 10000
+  pos_emb_type: "1d"        # RoPE — required by the attention mixer
+  use_mlp_t: false          # TRM-Att (attention + SwiGLU)
+  use_conv_swiglu: false
+  use_board_swiglu: false
+  use_muon: false
+
+trainer:
+  check_val_every_n_epoch: 1000
+
+callbacks:
+  ema:
+    _target_: trm.nn.callbacks.ema.EMACallback
+    decay: 0.999
+    use_ema_for_validation: true
+    use_ema_for_test: true
+  model_checkpoint:
+    monitor: "val/exact_accuracy"
+    save_top_k: -1
+  ppbench_metrics:                    # per-type exact accuracy during validation
+    _target_: trm.nn.callbacks.ppbench_metrics.PPBenchTypeAccuracyCallback
+    data_dir: ./data/ppbench
+
+save_dir: ./tmp/ml-experiments
+append_wandb_name_to_save_dir: true

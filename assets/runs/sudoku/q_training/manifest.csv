@@ -1,0 +1,4 @@
+task,run,path,source_path
+maze_hard,version_0,maze_hard/version_0_metrics.csv,data/maze_hard/csv/version_0/metrics.csv
+sudoku_extreme,version_0,sudoku_extreme/version_0_metrics.csv,data/sudoku_extreme/csv/version_0/metrics.csv
+sudoku_extreme,version_1,sudoku_extreme/version_1_metrics.csv,data/sudoku_extreme/csv/version_1/metrics.csv

@@ -1,0 +1,6 @@
+{
+  "num_folds": 3,
+  "fold_seed": 31,
+  "step_metrics_summary": "step_metrics_summary.csv",
+  "rank_profiles_summary": "rank_profiles_summary.csv"
+}

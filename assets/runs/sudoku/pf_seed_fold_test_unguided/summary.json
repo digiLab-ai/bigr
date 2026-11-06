@@ -1,0 +1,59 @@
+{
+  "split": "test",
+  "num_seeds": 5,
+  "seeds": [
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "num_folds": 5,
+  "fold_seed": 31,
+  "num_runs": 25,
+  "seed_entries": [
+    {
+      "seed": 31,
+      "path": "seed_0031",
+      "num_folds": 5,
+      "num_runs": 5
+    },
+    {
+      "seed": 32,
+      "path": "seed_0032",
+      "num_folds": 5,
+      "num_runs": 5
+    },
+    {
+      "seed": 33,
+      "path": "seed_0033",
+      "num_folds": 5,
+      "num_runs": 5
+    },
+    {
+      "seed": 34,
+      "path": "seed_0034",
+      "num_folds": 5,
+      "num_runs": 5
+    },
+    {
+      "seed": 35,
+      "path": "seed_0035",
+      "num_folds": 5,
+      "num_runs": 5
+    }
+  ],
+  "outputs": {
+    "step_metrics_summary": "step_metrics_summary.csv",
+    "rank_profiles_summary": "rank_profiles_summary.csv"
+  },
+  "final_step_summary": {
+    "step": 48,
+    "exact_accuracy_mean": 0.8430037951469421,
+    "exact_accuracy_std": 0.006678680328651171,
+    "any_exact_rate_mean": 0.981801381111145,
+    "any_exact_rate_std": 0.0027879404656696955,
+    "mean_ess_mean": 1.0,
+    "mean_ess_std": 0.0
+  }
+}

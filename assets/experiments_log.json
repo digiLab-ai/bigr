@@ -1,0 +1,56 @@
+{
+  "comment": "Provenance of every cached run directory under assets/runs: the figure or table it feeds, the driver flag that regenerates it, and the key settings. See assets/runs/README.md for the prose version.",
+  "figures": [
+    {"figure": "fig_main_result", "paper_number": 1, "table": "Table 1 (Sudoku-Extreme rows)",
+     "runs": [
+       {"path": "assets/runs/sudoku/pf_seed_fold_test", "command": "bash scripts/run_experiments.sh --profile sudoku_extreme --main-result", "key_params": {"S": 16, "N": 48, "sigma": 0.3, "beta": 0.25, "tau_ess": 0.3, "seeds": [31, 32, 33, 34, 35], "folds": 5, "fold_seed": 31, "batch": "64 x 160"}},
+       {"path": "assets/runs/sudoku/pf_seed_fold_test_unguided", "command": "same (beta = 0)", "key_params": {"beta": 0.0}},
+       {"path": "assets/runs/sudoku/pf_seed_fold_impossible", "command": "bash scripts/run_experiments.sh --profile sudoku_extreme --df-recovery", "key_params": {"split": "impossible (DF)"}},
+       {"path": "assets/runs/sudoku/pf_seed_fold_impossible_unguided", "command": "same (beta = 0)", "key_params": {"beta": 0.0}},
+       {"path": "assets/runs/sudoku/pf_k5 (+ _unguided, pf_impossible_k5, pf_impossible_unguided_k5)", "command": "bash scripts/run_experiments.sh --profile sudoku_extreme --main-result-quick --df-recovery-quick", "key_params": {"seed": 31, "folds": 5}, "note": "single-seed variant; feeds the register's cohort, calibration-ladder and early-stopping rows and `regenerate_figures.sh --quick`"}
+     ]},
+    {"figure": "fig_inner_deviation_sudoku", "paper_number": 2,
+     "runs": [
+       {"path": "assets/runs/sudoku/inner_deviation_k5", "command": "bash scripts/run_experiments.sh --profile sudoku_extreme --inner-deviation", "key_params": {"n_puzzles": 2000, "sigma_values": [0.0, 0.1, 0.2, 0.3, 0.5, 0.8], "tube_alphas": [0.5, 1.0, 1.25, 1.5, 2.0], "n_probes": 16, "folds": 5}},
+       {"path": "assets/runs/sudoku/sigma_guided_results_k5", "command": "bash scripts/run_experiments.sh --profile sudoku_extreme --sigma-guided", "key_params": {"S": [4, 16], "sigma_values": [0.0, 0.1, 0.2, 0.3, 0.5, 0.8], "tau_ess": 0.3, "folds": 5}}
+     ]},
+    {"figure": "fig_guide_alignment", "paper_number": 3,
+     "runs": [
+       {"path": "assets/runs/sudoku/continuation_labels_k5", "command": "bash scripts/run_experiments.sh --profile sudoku_extreme --guide-alignment", "key_params": {"S": 16, "sigma": 0.3, "beta": 0.25, "tau_ess": 0.3, "batch": "64 x 160", "folds": 5}},
+       {"path": "assets/runs/maze/continuation_labels_maze_hard_k5", "command": "bash scripts/run_experiments.sh --profile maze_hard --guide-alignment", "key_params": {"S": 16, "sigma": 0.5, "beta": 1.0, "tau_ess": 0.3, "batch": "16 x 64", "folds": 5}}
+     ]},
+    {"figure": "fig_token_entropy", "paper_number": 4,
+     "runs": [
+       {"path": "assets/runs/sudoku/entropy_test_k5", "command": "bash scripts/run_experiments.sh --profile sudoku_extreme --token-entropy", "key_params": {"S": 16, "sigma": 0.3, "beta": 0.25, "tau_ess": 0.3, "temporal_stride": 3, "batch": "64 x 160", "folds": 5}},
+       {"path": "assets/runs/sudoku/entropy_impossible_k5", "command": "same, DF split", "key_params": {"split": "impossible"}}
+     ],
+     "note": "entropy_data.npz is shipped recompressed (uint8 predictions, float16 Q-logits); lossless for the integer arrays and below figure precision for the logits."},
+    {"figure": "fig_maze_case_study", "paper_number": 5,
+     "runs": [
+       {"path": "assets/runs/maze/inner_deviation_maze_hard_k5", "command": "bash scripts/run_experiments.sh --profile maze_hard --inner-deviation", "key_params": {"n_puzzles": 1000, "sigma_values": [0.0, 0.1, 0.2, 0.3, 0.5, 0.8, 1.3], "tube_alphas": [0.5, 1.0, 1.25, 1.5, 2.0], "folds": 5}},
+       {"path": "assets/runs/sudoku/q_training", "command": "copied from the Lightning CSV logs of the two backbone training runs (manifest.csv)", "key_params": {"tasks": ["sudoku_extreme", "maze_hard"]}}
+     ]},
+    {"figure": "fig_ablation_sensitivity", "paper_number": 6,
+     "runs": [
+       {"path": "assets/runs/sudoku/ablation_sensitivity_k5", "command": "bash scripts/run_experiments.sh --profile sudoku_extreme --ablation-sensitivity", "key_params": {"beta_sweep": true, "S_sweep": true, "sigma_sweep": true, "tau_sweep": true, "folds": 5}},
+       {"path": "assets/runs/maze/ablation_sensitivity_maze_hard_k5", "command": "bash scripts/run_experiments.sh --profile maze_hard --ablation-sensitivity", "key_params": {"folds": 5}}
+     ]},
+    {"figure": "fig_token_contraction", "paper_number": 7,
+     "runs": [{"path": "assets/runs/sudoku/entropy_test_k5 and entropy_impossible_k5", "command": "as Figure 4"}]},
+    {"figure": "fig_checkpoint", "paper_number": 8,
+     "runs": [{"path": "assets/runs/sudoku/pf_checkpoint_sweep", "command": "bash scripts/run_experiments.sh --profile sudoku_extreme --checkpoint-sweep", "key_params": {"checkpoints": "every epoch_*.ckpt of the Sudoku-Extreme training run", "conditions": ["test_guided", "test_unguided", "impossible_guided", "impossible_unguided"], "S": 16, "sigma": 0.3, "beta": 0.25, "tau_ess": 0.3, "batch": "64 x 32", "folds": 5}, "note": "training_progress.csv is the Lightning CSV log of the same training run"}]}
+  ],
+  "tables": {
+    "register": "assets/runs/analysis/register/metrics.csv — one row per number the paper prints; rebuilt by `bash scripts/build_tables.sh` from the directories below.",
+    "paired_stats": "assets/runs/analysis/paired_stats — `python scripts/analysis/run_paired_stats.py` over the pf_seed_fold_* and *_k5 runs (Tables 1 and 7).",
+    "calibration_corruption": "assets/runs/analysis/ablations/calibration_corruption — full-set unguided traces (`--traces`) and their analyses (Tables 1, 8, 10, 14).",
+    "ppbench": "assets/runs/analysis/ablations/ppbench — five-seed PPBench runs on the validation and golden splits (`--ppbench`; Table 1 column, Tables 9-10).",
+    "inner_depth": "assets/runs/analysis/ablations/inner_depth — `--inner-depth` (Table 5).",
+    "noise_families": "assets/runs/analysis/ablations/noise_families — `--noise-families` (Table 6).",
+    "baselines": "assets/runs/analysis/ablations/baselines — `--depth-baseline` (Table 11) and `--frontier` (Table 13).",
+    "timing": "assets/runs/analysis/ablations/timing/h100_timing.md — assembled from `--timing` logs on one H100 (Table 3).",
+    "calibration_ladder, early_stopping": "`python scripts/analysis/run_calibration_ladder.py`, `run_early_stopping.py` over the *_k5 runs (Table 10 prose, Table 14).",
+    "ppbench_depth": "assets/runs/analysis/ppbench_depth — deterministic PPBench depth profile, reported as measured (no producing script in this release; Table 11)."
+  },
+  "operating_points": "Paper Table 4: Sudoku-Extreme (S, N, sigma, beta, tau_ESS, M) = (16, 48, 0.3, 0.25, 0.3, 6); Maze-Hard = (16, 48, 0.5, 1.0, 0.3, 4); PPBench = (16, 48, 0.3, 0.25, 0.5, 4)."
+}

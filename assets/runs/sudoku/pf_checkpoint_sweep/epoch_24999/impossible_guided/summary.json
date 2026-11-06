@@ -1,0 +1,53 @@
+{
+  "split": "impossible",
+  "num_folds": 5,
+  "fold_seed": 31,
+  "total_examples": 1408,
+  "total_batches": 25,
+  "folds": [
+    {
+      "fold_index": 0,
+      "fold_name": "fold_01",
+      "num_examples": 282,
+      "num_batches": 5,
+      "path": "fold_01"
+    },
+    {
+      "fold_index": 1,
+      "fold_name": "fold_02",
+      "num_examples": 282,
+      "num_batches": 5,
+      "path": "fold_02"
+    },
+    {
+      "fold_index": 2,
+      "fold_name": "fold_03",
+      "num_examples": 282,
+      "num_batches": 5,
+      "path": "fold_03"
+    },
+    {
+      "fold_index": 3,
+      "fold_name": "fold_04",
+      "num_examples": 281,
+      "num_batches": 5,
+      "path": "fold_04"
+    },
+    {
+      "fold_index": 4,
+      "fold_name": "fold_05",
+      "num_examples": 281,
+      "num_batches": 5,
+      "path": "fold_05"
+    }
+  ],
+  "final_step_summary": {
+    "step": 48,
+    "exact_accuracy_mean": 0.6251981019973755,
+    "exact_accuracy_std": 0.014711993336150626,
+    "any_exact_rate_mean": 0.6251981019973755,
+    "any_exact_rate_std": 0.014711993336150626,
+    "mean_ess_mean": 0.6580345392227173,
+    "mean_ess_std": 0.015722651248686704
+  }
+}

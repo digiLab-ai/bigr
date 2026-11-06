@@ -1,0 +1,49 @@
+{
+  "batch_size": 16,
+  "beta": 0.25,
+  "conditions": [
+    {
+      "ess_threshold": 0.0,
+      "sigma_rejuvenate": 0.0,
+      "tag": "no_resample"
+    },
+    {
+      "ess_threshold": 0.3,
+      "sigma_rejuvenate": 0.0,
+      "tag": "tau_0.30"
+    },
+    {
+      "ess_threshold": 0.5,
+      "sigma_rejuvenate": 0.0,
+      "tag": "tau_0.50"
+    },
+    {
+      "ess_threshold": 0.7,
+      "sigma_rejuvenate": 0.0,
+      "tag": "tau_0.70"
+    },
+    {
+      "ess_threshold": 1.0,
+      "sigma_rejuvenate": 0.0,
+      "tag": "tau_1.00"
+    },
+    {
+      "ess_threshold": 0.5,
+      "sigma_rejuvenate": 0.1,
+      "tag": "tau_0.50_rejuv"
+    },
+    {
+      "ess_threshold": 0.7,
+      "sigma_rejuvenate": 0.1,
+      "tag": "tau_0.70_rejuv"
+    }
+  ],
+  "fold_seed": 31,
+  "n_batches": 64,
+  "num_folds": 5,
+  "particles": 16,
+  "seed": 31,
+  "sigma": 0.3,
+  "smoke": false,
+  "total_steps": 48
+}

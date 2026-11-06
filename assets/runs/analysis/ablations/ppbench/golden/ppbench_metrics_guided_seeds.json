@@ -1,0 +1,166 @@
+{
+  "split": "test",
+  "num_seeds": 5,
+  "seeds": [
+    {
+      "run": "pf_ppbench_seed31",
+      "num_examples": 42,
+      "per_type": {
+        "sudoku": {
+          "n": 15,
+          "guided_exact": 0.6,
+          "trm_exact": 0.4666666666666667
+        },
+        "lightup": {
+          "n": 8,
+          "guided_exact": 1.0,
+          "trm_exact": 0.875
+        },
+        "nurikabe": {
+          "n": 9,
+          "guided_exact": 0.8888888888888888,
+          "trm_exact": 0.8888888888888888
+        },
+        "tapa": {
+          "n": 10,
+          "guided_exact": 0.6,
+          "trm_exact": 0.3
+        }
+      },
+      "guided_exact_agg": 0.7380952380952381,
+      "trm_exact_agg": 0.5952380952380952
+    },
+    {
+      "run": "pf_ppbench_seed32",
+      "num_examples": 42,
+      "per_type": {
+        "sudoku": {
+          "n": 15,
+          "guided_exact": 0.6666666666666666,
+          "trm_exact": 0.4666666666666667
+        },
+        "lightup": {
+          "n": 8,
+          "guided_exact": 1.0,
+          "trm_exact": 0.875
+        },
+        "nurikabe": {
+          "n": 9,
+          "guided_exact": 0.8888888888888888,
+          "trm_exact": 0.8888888888888888
+        },
+        "tapa": {
+          "n": 10,
+          "guided_exact": 0.7,
+          "trm_exact": 0.3
+        }
+      },
+      "guided_exact_agg": 0.7857142857142857,
+      "trm_exact_agg": 0.5952380952380952
+    },
+    {
+      "run": "pf_ppbench_seed33",
+      "num_examples": 42,
+      "per_type": {
+        "sudoku": {
+          "n": 15,
+          "guided_exact": 0.6,
+          "trm_exact": 0.4666666666666667
+        },
+        "lightup": {
+          "n": 8,
+          "guided_exact": 1.0,
+          "trm_exact": 0.875
+        },
+        "nurikabe": {
+          "n": 9,
+          "guided_exact": 0.8888888888888888,
+          "trm_exact": 0.8888888888888888
+        },
+        "tapa": {
+          "n": 10,
+          "guided_exact": 0.6,
+          "trm_exact": 0.3
+        }
+      },
+      "guided_exact_agg": 0.7380952380952381,
+      "trm_exact_agg": 0.5952380952380952
+    },
+    {
+      "run": "pf_ppbench_seed34",
+      "num_examples": 42,
+      "per_type": {
+        "sudoku": {
+          "n": 15,
+          "guided_exact": 0.6,
+          "trm_exact": 0.4666666666666667
+        },
+        "lightup": {
+          "n": 8,
+          "guided_exact": 1.0,
+          "trm_exact": 0.875
+        },
+        "nurikabe": {
+          "n": 9,
+          "guided_exact": 0.8888888888888888,
+          "trm_exact": 0.8888888888888888
+        },
+        "tapa": {
+          "n": 10,
+          "guided_exact": 0.6,
+          "trm_exact": 0.3
+        }
+      },
+      "guided_exact_agg": 0.7380952380952381,
+      "trm_exact_agg": 0.5952380952380952
+    },
+    {
+      "run": "pf_ppbench_seed35",
+      "num_examples": 42,
+      "per_type": {
+        "sudoku": {
+          "n": 15,
+          "guided_exact": 0.6666666666666666,
+          "trm_exact": 0.4666666666666667
+        },
+        "lightup": {
+          "n": 8,
+          "guided_exact": 1.0,
+          "trm_exact": 0.875
+        },
+        "nurikabe": {
+          "n": 9,
+          "guided_exact": 0.8888888888888888,
+          "trm_exact": 0.8888888888888888
+        },
+        "tapa": {
+          "n": 10,
+          "guided_exact": 0.5,
+          "trm_exact": 0.3
+        }
+      },
+      "guided_exact_agg": 0.7380952380952381,
+      "trm_exact_agg": 0.5952380952380952
+    }
+  ],
+  "guided_exact_agg_mean": 0.7476190476190476,
+  "guided_exact_agg_std": 0.01904761904761902,
+  "trm_exact_agg_mean": 0.5952380952380952,
+  "trm_exact_agg_std": 0.0,
+  "sudoku_guided_exact_mean": 0.6266666666666667,
+  "sudoku_guided_exact_std": 0.03265986323710904,
+  "sudoku_trm_exact_mean": 0.4666666666666667,
+  "sudoku_trm_exact_std": 0.0,
+  "lightup_guided_exact_mean": 1.0,
+  "lightup_guided_exact_std": 0.0,
+  "lightup_trm_exact_mean": 0.875,
+  "lightup_trm_exact_std": 0.0,
+  "nurikabe_guided_exact_mean": 0.888888888888889,
+  "nurikabe_guided_exact_std": 1.1102230246251565e-16,
+  "nurikabe_trm_exact_mean": 0.888888888888889,
+  "nurikabe_trm_exact_std": 1.1102230246251565e-16,
+  "tapa_guided_exact_mean": 0.6,
+  "tapa_guided_exact_std": 0.06324555320336757,
+  "tapa_trm_exact_mean": 0.3,
+  "tapa_trm_exact_std": 0.0
+}

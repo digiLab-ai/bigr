@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install (CPU wheels)
+        run: |
+          python -m pip install --upgrade pip
+          pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cpu
+          pip install -r requirements.txt
+          pip install -e ".[dev]"
+      - name: Unit and integration tests (no GPU, no checkpoints)
+        run: pytest -q
+      - name: No-GPU smoke test (cached runs -> two paper figures)
+        run: bash scripts/smoke_test.sh
+      - name: Render Figures 1-8 from the cached runs
+        run: bash scripts/regenerate_figures.sh --out tmp/figures
+      - name: Rebuild the evidence register from the shipped artefacts
+        run: bash scripts/build_tables.sh

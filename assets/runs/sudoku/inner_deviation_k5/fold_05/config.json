@@ -1,0 +1,30 @@
+{
+  "checkpoint": "data/sudoku_extreme/checkpoints/last.ckpt",
+  "data_dir": "data/sudoku_extreme/dataset/sudoku_extreme",
+  "out": "assets/runs/inner_deviation",
+  "device": "cuda",
+  "n_puzzles": 2000,
+  "outer_steps": 48,
+  "n_samples": 16,
+  "sigma_values": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.5,
+    0.8
+  ],
+  "tube_alphas": [
+    0.5,
+    1.0,
+    1.25,
+    1.5,
+    2.0
+  ],
+  "n_probes": 16,
+  "batch_size": 64,
+  "seed": 31,
+  "num_folds": 5,
+  "fold_seed": 31,
+  "smoke": false
+}

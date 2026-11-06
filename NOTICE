@@ -1,0 +1,11 @@
+BIGR: Boosting Inference with Guided Reasoning
+Copyright 2026 digiLab Solutions Ltd
+
+This product includes software developed at digiLab and the University of Bristol.
+If you use it in research, please cite:
+
+    Corbett, Tzatzopoulou, Sood, Ramesh and Dodwell. Boosting Inference with Guided
+    Reasoning: Stochastic Exploration for Recursive Models. NeurIPS 2026.
+    https://openreview.net/forum?id=nZD0FHMUmR
+
+Third-party components and their licences are listed in NOTICES.md.

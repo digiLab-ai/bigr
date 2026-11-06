@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "BIGR: Boosting Inference with Guided Reasoning"
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/digiLab-ai/bigr"
+url: "https://openreview.net/forum?id=nZD0FHMUmR"
+authors:
+  - family-names: Corbett
+    given-names: Andrew
+    email: andy.corbett@digilab.ai
+    affiliation: "digiLab, UK; University of Bristol, UK"
+  - family-names: Tzatzopoulou
+    given-names: Anna
+    affiliation: "digiLab, UK"
+  - family-names: Sood
+    given-names: Archit
+    affiliation: "digiLab, UK"
+  - family-names: Ramesh
+    given-names: Sai-Aakash
+    affiliation: "digiLab, UK; University of Bristol, UK"
+  - family-names: Dodwell
+    given-names: Tim
+    affiliation: "digiLab, UK; University of Bristol, UK"
+preferred-citation:
+  type: conference-paper
+  title: "Boosting Inference with Guided Reasoning: Stochastic Exploration for Recursive Models"
+  authors:
+    - family-names: Corbett
+      given-names: Andrew
+    - family-names: Tzatzopoulou
+      given-names: Anna
+    - family-names: Sood
+      given-names: Archit
+    - family-names: Ramesh
+      given-names: Sai-Aakash
+    - family-names: Dodwell
+      given-names: Tim
+  collection-title: "Advances in Neural Information Processing Systems (NeurIPS)"
+  year: 2026
+  url: "https://openreview.net/forum?id=nZD0FHMUmR"

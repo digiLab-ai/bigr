@@ -1,0 +1,20 @@
+{
+  "num_puzzles": 253,
+  "num_groups": 253,
+  "seq_len": 100,
+  "vocab_size": 115,
+  "grid_size": 10,
+  "max_grid_size": 10,
+  "per_type_counts": {
+    "sudoku": 95,
+    "lightup": 63,
+    "nurikabe": 67,
+    "tapa": 28
+  },
+  "type_index": {
+    "sudoku": 0,
+    "lightup": 1,
+    "nurikabe": 2,
+    "tapa": 3
+  }
+}

@@ -1,0 +1,11 @@
+mode,particles,beta,sigma,ess_threshold,run_dir,elapsed_seconds
+guided,1,0.25,0.3,0.3,assets/runs/analysis/e1c_frontier_sudoku/guided/S_01,22.082619778999998
+unguided,1,0.0,0.3,0.3,assets/runs/analysis/e1c_frontier_sudoku/unguided/S_01,11.996856322
+guided,2,0.25,0.3,0.3,assets/runs/analysis/e1c_frontier_sudoku/guided/S_02,12.379821923000009
+unguided,2,0.0,0.3,0.3,assets/runs/analysis/e1c_frontier_sudoku/unguided/S_02,11.897787868999984
+guided,4,0.25,0.3,0.3,assets/runs/analysis/e1c_frontier_sudoku/guided/S_04,11.967621070999996
+unguided,4,0.0,0.3,0.3,assets/runs/analysis/e1c_frontier_sudoku/unguided/S_04,12.125802173000011
+guided,8,0.25,0.3,0.3,assets/runs/analysis/e1c_frontier_sudoku/guided/S_08,16.399057630000016
+unguided,8,0.0,0.3,0.3,assets/runs/analysis/e1c_frontier_sudoku/unguided/S_08,16.021350675000008
+guided,16,0.25,0.3,0.3,assets/runs/analysis/e1c_frontier_sudoku/guided/S_16,29.945246631999993
+unguided,16,0.0,0.3,0.3,assets/runs/analysis/e1c_frontier_sudoku/unguided/S_16,29.765813148000007

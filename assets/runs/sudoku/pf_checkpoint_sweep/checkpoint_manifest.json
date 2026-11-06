@@ -1,0 +1,71 @@
+{
+  "checkpoint_dir": "data/sudoku_extreme/checkpoints",
+  "data_dir": "data/sudoku_extreme/dataset/sudoku_extreme",
+  "num_checkpoints": 20,
+  "num_checkpoints_skipped": 1,
+  "checkpoints": [
+    "epoch_2499.ckpt",
+    "epoch_4999.ckpt",
+    "epoch_7499.ckpt",
+    "epoch_9999.ckpt",
+    "epoch_12499.ckpt",
+    "epoch_14999.ckpt",
+    "epoch_17499.ckpt",
+    "epoch_19999.ckpt",
+    "epoch_22499.ckpt",
+    "epoch_24999.ckpt",
+    "epoch_27499.ckpt",
+    "epoch_29999.ckpt",
+    "epoch_32499.ckpt",
+    "epoch_34999.ckpt",
+    "epoch_37499.ckpt",
+    "epoch_39999.ckpt",
+    "epoch_42499.ckpt",
+    "epoch_44999.ckpt",
+    "epoch_47499.ckpt",
+    "epoch_49999.ckpt"
+  ],
+  "skipped_checkpoints": [
+    {
+      "checkpoint": "epoch_22499.ckpt",
+      "checkpoint_stem": "epoch_22499",
+      "checkpoint_epoch": 22499,
+      "error_type": "RuntimeError",
+      "error_message": "PytorchStreamReader failed reading file data/59: invalid header or archive is corrupted. This is an internal miniz error. If you are seeing this error, there is a high likelihood that your checkpoint file is corrupted. This can happen if the checkpoint was not saved properly, was transferred incorrectly, or the file was modified after saving."
+    }
+  ],
+  "num_conditions": 4,
+  "conditions": [
+    {
+      "name": "test_guided",
+      "split": "test",
+      "beta": 0.25,
+      "guided": true
+    },
+    {
+      "name": "test_unguided",
+      "split": "test",
+      "beta": 0.0,
+      "guided": false
+    },
+    {
+      "name": "impossible_guided",
+      "split": "impossible",
+      "beta": 0.25,
+      "guided": true
+    },
+    {
+      "name": "impossible_unguided",
+      "split": "impossible",
+      "beta": 0.0,
+      "guided": false
+    }
+  ],
+  "num_folds": 5,
+  "fold_seed": 31,
+  "num_total_runs": 400,
+  "outputs": {
+    "checkpoint_condition_summary": "checkpoint_condition_summary.csv",
+    "condition_overall_summary": "condition_overall_summary.csv"
+  }
+}

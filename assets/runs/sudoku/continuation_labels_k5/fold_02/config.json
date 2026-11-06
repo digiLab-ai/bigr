@@ -1,0 +1,23 @@
+{
+  "batch_size": 64,
+  "beta": 0.25,
+  "checkpoint": "data/sudoku_extreme/checkpoints/last.ckpt",
+  "data_dir": "data/sudoku_extreme/dataset/sudoku_extreme",
+  "device": "cuda",
+  "disable_step_cpu_metrics": false,
+  "ess_threshold": 0.3,
+  "fold_index": 2,
+  "fold_mode": true,
+  "fold_name": "fold_02",
+  "fold_num_batches": 32,
+  "fold_num_examples": 1997,
+  "fold_seed": 31,
+  "n_batches": 160,
+  "num_folds": 5,
+  "out": "assets/runs/continuation_labels_k5/fold_02",
+  "particles": 16,
+  "seed": 31,
+  "sigma": 0.3,
+  "smoke": false,
+  "total_steps": 48
+}

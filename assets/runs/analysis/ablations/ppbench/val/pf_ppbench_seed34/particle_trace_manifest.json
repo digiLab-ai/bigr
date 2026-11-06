@@ -1,0 +1,9 @@
+{
+  "shape": {
+    "num_examples": 253,
+    "total_steps": 48,
+    "particles": 16
+  },
+  "particle_order": "original",
+  "ancestor_semantics": "particle_ancestors[:, step - 1, child] gives the parent particle index at checkpoint step used to initialise child at the next step after any post-step resampling; identity rows mean no resampling fired for that example."
+}

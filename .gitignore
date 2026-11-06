@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+
+# Checkpoints and datasets are fetched, never committed (see README: Data and checkpoints).
+data/*
+!data/ppbench/
+!data/ppbench/**
+*.ckpt
+
+# Raw particle traces and per-step arrays are large and regenerable; only the
+# derived CSV/JSON/MD summaries that back the paper are committed.
+assets/runs/**/*.npy
+
+# Local tooling and secrets
+.env
+.DS_Store
+.vscode/
+.idea/
+.claude/
+.codex/
+tmp/
+logs/
+wandb/

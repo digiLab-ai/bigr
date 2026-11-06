@@ -1,0 +1,34 @@
+{
+  "batch_size": 16,
+  "beta_values": [
+    0.0,
+    0.05,
+    0.1,
+    0.25,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "compare_conditions": [
+    "no_resample",
+    "tau_0.30"
+  ],
+  "fold_seed": 31,
+  "n_batches": 64,
+  "num_folds": 5,
+  "particles": 16,
+  "s_values": [
+    2,
+    4,
+    8,
+    16
+  ],
+  "seed": 31,
+  "sigma_inner": 0.5,
+  "sigma_trans": 0.5,
+  "sigma_trans_values": [
+    0.5
+  ],
+  "smoke": false,
+  "total_steps": 48
+}

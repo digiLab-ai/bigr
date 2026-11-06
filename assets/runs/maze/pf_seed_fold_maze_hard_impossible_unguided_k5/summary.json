@@ -1,0 +1,28 @@
+{
+  "split": "impossible",
+  "num_seeds": 5,
+  "seeds": [
+    31,
+    41,
+    59,
+    83,
+    109
+  ],
+  "num_folds": 5,
+  "fold_seed": 31,
+  "num_runs": 25,
+  "final_step_summary": {
+    "step": 48,
+    "exact_accuracy_mean": 0.13119444206357003,
+    "exact_accuracy_std": 0.06510298386550309,
+    "any_exact_rate_mean": 0.37402777791023256,
+    "any_exact_rate_std": 0.08721201336369472,
+    "mean_ess_mean": 1.0,
+    "mean_ess_std": 0.0
+  },
+  "outputs": {
+    "seed_fold_manifest": "seed_fold_manifest.csv",
+    "step_metrics_summary": "step_metrics_summary.csv",
+    "rank_profiles_summary": "rank_profiles_summary.csv"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "beta": 0.25,
+  "ess_threshold": 0.7,
+  "fold_seed": 31,
+  "num_folds": 5,
+  "particles": 16,
+  "seed": 31,
+  "sigma": 0.3,
+  "sigma_rejuvenate": 0.1,
+  "tag": "tau_0.70_rejuv",
+  "total_steps": 48
+}

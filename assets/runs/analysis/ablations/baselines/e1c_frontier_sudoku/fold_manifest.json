@@ -1,0 +1,24 @@
+{
+  "fold_seed": 31,
+  "folds": [
+    {
+      "fold_index": 0,
+      "fold_name": "fold_01",
+      "num_batches": 11,
+      "num_examples": 171
+    },
+    {
+      "fold_index": 1,
+      "fold_name": "fold_02",
+      "num_batches": 11,
+      "num_examples": 171
+    },
+    {
+      "fold_index": 2,
+      "fold_name": "fold_03",
+      "num_batches": 11,
+      "num_examples": 170
+    }
+  ],
+  "num_folds": 3
+}

@@ -1,0 +1,166 @@
+{
+  "split": "test",
+  "num_seeds": 5,
+  "seeds": [
+    {
+      "run": "pf_ppbench_unguided_seed31",
+      "num_examples": 42,
+      "per_type": {
+        "sudoku": {
+          "n": 15,
+          "guided_exact": 0.26666666666666666,
+          "trm_exact": 0.4666666666666667
+        },
+        "lightup": {
+          "n": 8,
+          "guided_exact": 0.875,
+          "trm_exact": 0.875
+        },
+        "nurikabe": {
+          "n": 9,
+          "guided_exact": 0.8888888888888888,
+          "trm_exact": 0.8888888888888888
+        },
+        "tapa": {
+          "n": 10,
+          "guided_exact": 0.3,
+          "trm_exact": 0.3
+        }
+      },
+      "guided_exact_agg": 0.5238095238095238,
+      "trm_exact_agg": 0.5952380952380952
+    },
+    {
+      "run": "pf_ppbench_unguided_seed32",
+      "num_examples": 42,
+      "per_type": {
+        "sudoku": {
+          "n": 15,
+          "guided_exact": 0.26666666666666666,
+          "trm_exact": 0.4666666666666667
+        },
+        "lightup": {
+          "n": 8,
+          "guided_exact": 0.875,
+          "trm_exact": 0.875
+        },
+        "nurikabe": {
+          "n": 9,
+          "guided_exact": 0.8888888888888888,
+          "trm_exact": 0.8888888888888888
+        },
+        "tapa": {
+          "n": 10,
+          "guided_exact": 0.5,
+          "trm_exact": 0.3
+        }
+      },
+      "guided_exact_agg": 0.5714285714285714,
+      "trm_exact_agg": 0.5952380952380952
+    },
+    {
+      "run": "pf_ppbench_unguided_seed33",
+      "num_examples": 42,
+      "per_type": {
+        "sudoku": {
+          "n": 15,
+          "guided_exact": 0.3333333333333333,
+          "trm_exact": 0.4666666666666667
+        },
+        "lightup": {
+          "n": 8,
+          "guided_exact": 1.0,
+          "trm_exact": 0.875
+        },
+        "nurikabe": {
+          "n": 9,
+          "guided_exact": 0.7777777777777778,
+          "trm_exact": 0.8888888888888888
+        },
+        "tapa": {
+          "n": 10,
+          "guided_exact": 0.4,
+          "trm_exact": 0.3
+        }
+      },
+      "guided_exact_agg": 0.5714285714285714,
+      "trm_exact_agg": 0.5952380952380952
+    },
+    {
+      "run": "pf_ppbench_unguided_seed34",
+      "num_examples": 42,
+      "per_type": {
+        "sudoku": {
+          "n": 15,
+          "guided_exact": 0.26666666666666666,
+          "trm_exact": 0.4666666666666667
+        },
+        "lightup": {
+          "n": 8,
+          "guided_exact": 1.0,
+          "trm_exact": 0.875
+        },
+        "nurikabe": {
+          "n": 9,
+          "guided_exact": 0.7777777777777778,
+          "trm_exact": 0.8888888888888888
+        },
+        "tapa": {
+          "n": 10,
+          "guided_exact": 0.5,
+          "trm_exact": 0.3
+        }
+      },
+      "guided_exact_agg": 0.5714285714285714,
+      "trm_exact_agg": 0.5952380952380952
+    },
+    {
+      "run": "pf_ppbench_unguided_seed35",
+      "num_examples": 42,
+      "per_type": {
+        "sudoku": {
+          "n": 15,
+          "guided_exact": 0.13333333333333333,
+          "trm_exact": 0.4666666666666667
+        },
+        "lightup": {
+          "n": 8,
+          "guided_exact": 1.0,
+          "trm_exact": 0.875
+        },
+        "nurikabe": {
+          "n": 9,
+          "guided_exact": 0.7777777777777778,
+          "trm_exact": 0.8888888888888888
+        },
+        "tapa": {
+          "n": 10,
+          "guided_exact": 0.6,
+          "trm_exact": 0.3
+        }
+      },
+      "guided_exact_agg": 0.5476190476190477,
+      "trm_exact_agg": 0.5952380952380952
+    }
+  ],
+  "guided_exact_agg_mean": 0.5571428571428572,
+  "guided_exact_agg_std": 0.019047619047619018,
+  "trm_exact_agg_mean": 0.5952380952380952,
+  "trm_exact_agg_std": 0.0,
+  "sudoku_guided_exact_mean": 0.2533333333333333,
+  "sudoku_guided_exact_std": 0.06531972647421808,
+  "sudoku_trm_exact_mean": 0.4666666666666667,
+  "sudoku_trm_exact_std": 0.0,
+  "lightup_guided_exact_mean": 0.95,
+  "lightup_guided_exact_std": 0.06123724356957946,
+  "lightup_trm_exact_mean": 0.875,
+  "lightup_trm_exact_std": 0.0,
+  "nurikabe_guided_exact_mean": 0.8222222222222222,
+  "nurikabe_guided_exact_std": 0.05443310539518171,
+  "nurikabe_trm_exact_mean": 0.888888888888889,
+  "nurikabe_trm_exact_std": 1.1102230246251565e-16,
+  "tapa_guided_exact_mean": 0.4600000000000001,
+  "tapa_guided_exact_std": 0.1019803902718557,
+  "tapa_trm_exact_mean": 0.3,
+  "tapa_trm_exact_std": 0.0
+}

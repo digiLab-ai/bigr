@@ -1,0 +1,9 @@
+{
+  "profile": "sudoku_extreme",
+  "split": "test",
+  "total_steps": "768",
+  "batch_size": "16",
+  "n_batches": "16",
+  "device": "cuda",
+  "out": "assets/runs/analysis/e2_depth_sudoku"
+}

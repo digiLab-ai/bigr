@@ -1,0 +1,19 @@
+{
+  "checkpoint_dir": "data/sudoku_extreme/checkpoints",
+  "data_dir": "data/sudoku_extreme/dataset/sudoku_extreme",
+  "out": "assets/runs/pf_checkpoint_sweep",
+  "device": "cuda",
+  "particles": 16,
+  "total_steps": 48,
+  "sigma": 0.3,
+  "ess_threshold": 0.3,
+  "seed": 31,
+  "batch_size": 64,
+  "n_batches": 32,
+  "num_folds": 5,
+  "fold_seed": 31,
+  "include_last": false,
+  "checkpoint_all_steps": false,
+  "disable_step_cpu_metrics": false,
+  "smoke": false
+}
