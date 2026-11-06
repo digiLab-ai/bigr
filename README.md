@@ -2,12 +2,13 @@
 
 **Tiny recursive models, think BIGR.** Code, cached results and reproduction recipes for the
 NeurIPS 2026 paper
-[*Boosting Inference with Guided Reasoning: Stochastic Exploration for Recursive Models*](https://openreview.net/forum?id=nZD0FHMUmR)
+[_Boosting Inference with Guided Reasoning: Stochastic Exploration for Recursive Models_](https://openreview.net/forum?id=nZD0FHMUmR)
 (Corbett, Tzatzopoulou, Sood, Ramesh, Dodwell; digiLab and the University of Bristol).
 
 [![CI](https://github.com/digiLab-ai/bigr/actions/workflows/ci.yml/badge.svg)](https://github.com/digiLab-ai/bigr/actions/workflows/ci.yml)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 ![Python 3.12](https://img.shields.io/badge/python-3.12-blue)
+[![arXiv](https://img.shields.io/badge/arXiv-2605.25230-b31b1b.svg)](https://arxiv.org/abs/2605.25230)
 
 ![Figure 1: guided stochastic exploration on Sudoku-Extreme](assets/figures/fig_main_result.png)
 
@@ -32,14 +33,14 @@ rebuilt by `bash scripts/build_tables.sh`; the full table, with the particle-clo
 statistics and the corrupted-guide column, opens
 [`assets/runs/analysis/register/REPORT.md`](assets/runs/analysis/register/REPORT.md).
 
-| Method | Sudoku-Extreme Test | Sudoku-Extreme DF | Maze-Hard Test | PPBench val |
-|---|---|---|---|---|
-| Deterministic TRM (frozen backbone) | 85.9 ± 0.6 | 0.0 | 86.6 ± 2.1 | 62.5 |
-| Single stochastic rollout (beta = 0) | 84.3 ± 0.7 | 35.7 ± 2.8 | 85.2 ± 2.5 | 63.6 ± 1.6 |
-| **BIGR: sequential guiding (ours)** | **98.0 ± 0.2** | **85.9 ± 1.5** | 85.6 ± 2.8 | **77.9 ± 0.6** |
-| Oracle (any particle correct) | 98.1 ± 0.5 | 88.4 ± 0.6 | 91.3 ± 2.7 | 82.8 ± 0.7 |
+| Method                               | Sudoku-Extreme Test | Sudoku-Extreme DF | Maze-Hard Test | PPBench val    |
+| ------------------------------------ | ------------------- | ----------------- | -------------- | -------------- |
+| Deterministic TRM (frozen backbone)  | 85.9 ± 0.6          | 0.0               | 86.6 ± 2.1     | 62.5           |
+| Single stochastic rollout (beta = 0) | 84.3 ± 0.7          | 35.7 ± 2.8        | 85.2 ± 2.5     | 63.6 ± 1.6     |
+| **BIGR: sequential guiding (ours)**  | **98.0 ± 0.2**      | **85.9 ± 1.5**    | 85.6 ± 2.8     | **77.9 ± 0.6** |
+| Oracle (any particle correct)        | 98.1 ± 0.5          | 88.4 ± 0.6        | 91.3 ± 2.7     | 82.8 ± 0.7     |
 
-DF is the *deterministic-failure* split: the test puzzles the frozen backbone cannot solve
+DF is the _deterministic-failure_ split: the test puzzles the frozen backbone cannot solve
 on its own. The core runs evaluate whole batches: Sudoku-Extreme Test 9,984 of 10,020 and
 DF 1,408 of 1,427 puzzles, Maze-Hard Test 992 of 1,000, PPBench validation 253 (paper
 Table 2).
@@ -103,7 +104,7 @@ and Maze-Hard Test 1,000 and DF 134 mazes (`impossible/` on disk). They are not
 redistributed; `python scripts/data/build_eval_cohorts.py` rebuilds them in the paper's row
 order from the HRM releases, using the index files in `assets/cohorts/` (its README explains
 them). `bash scripts/data/build_df_split.sh sudoku_extreme` re-derives a DF split on your own
-hardware; it reproduces the paper's only at the paper's precision (see *Provenance*), so
+hardware; it reproduces the paper's only at the paper's precision (see _Provenance_), so
 evaluate the paper's cohorts from the rebuilt splits.
 
 **Datasets for training.** Sudoku-Extreme and Maze-Hard are the HRM releases on the Hub
@@ -148,24 +149,24 @@ bash scripts/run_experiments.sh --help                          # every flag, na
 bash scripts/run_experiments.sh --profile sudoku_extreme --smoke --main-result --device mps   # tiny sanity run, writes to tmp/
 ```
 
-| Paper item | Driver flag(s) | Cached output | Renderer / table source |
-|---|---|---|---|
-| Table 1, Figure 1 (Sudoku-Extreme) | `--profile sudoku_extreme --main-result --df-recovery` | `assets/runs/sudoku/pf_seed_fold_*` | `fig_pf_main.py`; `paired_stats` |
-| Table 1 (Maze-Hard), Table 12 | `--profile maze_hard --main-result --df-recovery` | `assets/runs/maze/pf_seed_fold_*` | `paired_stats` |
-| Table 1 PPBench column, Tables 9, 10, 14 | `--ppbench` | `assets/runs/analysis/ablations/ppbench/` | `eval_ppbench.py`, `eval_ppbench_suite.py`, `run_trace_analyses.py` |
-| Table 1 particle-cloud rows, Tables 8, 10, 14 | `--traces` (both profiles) | `assets/runs/analysis/ablations/calibration_corruption/` | `run_trace_analyses.py` |
-| Table 2 puzzle counts, Table 7 paired rules | `--main-result-quick --df-recovery-quick` + `--analysis` | `assets/runs/*/pf*_k5`, `analysis/paired_stats` | `run_paired_stats.py` |
-| Table 3 cost vs S | `--timing` | `analysis/ablations/timing/` | `bench_device.py`, `build_timing_table.py` |
-| Table 5 inner depth | `--inner-depth` | `analysis/ablations/inner_depth/` | register |
-| Table 6 noise families | `--noise-families` (both profiles) | `analysis/ablations/noise_families/` | register |
-| Table 11 deterministic depth | `--depth-baseline`, `--ppbench-depth` | `analysis/ablations/baselines/e2_depth_sudoku`, `analysis/ppbench_depth/` | register |
-| Table 13 particle-count frontier | `--frontier` | `analysis/ablations/baselines/e1c_frontier_sudoku` | register |
-| Figure 2 | `--inner-deviation --sigma-guided` | `sudoku/inner_deviation_k5`, `sudoku/sigma_guided_results_k5` | `fig_inner_deviation.py` |
-| Figure 3 | `--guide-alignment` (both profiles) | `*/continuation_labels_*` | `fig_guide_alignment.py` |
-| Figures 4, 7 | `--token-entropy` | `sudoku/entropy_{test,impossible}_k5` | `fig_token_entropy.py`, `fig_token_contraction.py` |
-| Figure 5 | `--profile maze_hard --inner-deviation` | `maze/inner_deviation_maze_hard_k5`, `sudoku/q_training` | `fig_maze_case_study.py` |
-| Figure 6 | `--ablation-sensitivity` (both profiles) | `*/ablation_sensitivity_*` | `fig_ablation_sensitivity.py` |
-| Figure 8 | `--checkpoint-sweep` (needs `--all-checkpoints`) | `sudoku/pf_checkpoint_sweep` | `fig_checkpoint.py` |
+| Paper item                                    | Driver flag(s)                                           | Cached output                                                             | Renderer / table source                                             |
+| --------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Table 1, Figure 1 (Sudoku-Extreme)            | `--profile sudoku_extreme --main-result --df-recovery`   | `assets/runs/sudoku/pf_seed_fold_*`                                       | `fig_pf_main.py`; `paired_stats`                                    |
+| Table 1 (Maze-Hard), Table 12                 | `--profile maze_hard --main-result --df-recovery`        | `assets/runs/maze/pf_seed_fold_*`                                         | `paired_stats`                                                      |
+| Table 1 PPBench column, Tables 9, 10, 14      | `--ppbench`                                              | `assets/runs/analysis/ablations/ppbench/`                                 | `eval_ppbench.py`, `eval_ppbench_suite.py`, `run_trace_analyses.py` |
+| Table 1 particle-cloud rows, Tables 8, 10, 14 | `--traces` (both profiles)                               | `assets/runs/analysis/ablations/calibration_corruption/`                  | `run_trace_analyses.py`                                             |
+| Table 2 puzzle counts, Table 7 paired rules   | `--main-result-quick --df-recovery-quick` + `--analysis` | `assets/runs/*/pf*_k5`, `analysis/paired_stats`                           | `run_paired_stats.py`                                               |
+| Table 3 cost vs S                             | `--timing`                                               | `analysis/ablations/timing/`                                              | `bench_device.py`, `build_timing_table.py`                          |
+| Table 5 inner depth                           | `--inner-depth`                                          | `analysis/ablations/inner_depth/`                                         | register                                                            |
+| Table 6 noise families                        | `--noise-families` (both profiles)                       | `analysis/ablations/noise_families/`                                      | register                                                            |
+| Table 11 deterministic depth                  | `--depth-baseline`, `--ppbench-depth`                    | `analysis/ablations/baselines/e2_depth_sudoku`, `analysis/ppbench_depth/` | register                                                            |
+| Table 13 particle-count frontier              | `--frontier`                                             | `analysis/ablations/baselines/e1c_frontier_sudoku`                        | register                                                            |
+| Figure 2                                      | `--inner-deviation --sigma-guided`                       | `sudoku/inner_deviation_k5`, `sudoku/sigma_guided_results_k5`             | `fig_inner_deviation.py`                                            |
+| Figure 3                                      | `--guide-alignment` (both profiles)                      | `*/continuation_labels_*`                                                 | `fig_guide_alignment.py`                                            |
+| Figures 4, 7                                  | `--token-entropy`                                        | `sudoku/entropy_{test,impossible}_k5`                                     | `fig_token_entropy.py`, `fig_token_contraction.py`                  |
+| Figure 5                                      | `--profile maze_hard --inner-deviation`                  | `maze/inner_deviation_maze_hard_k5`, `sudoku/q_training`                  | `fig_maze_case_study.py`                                            |
+| Figure 6                                      | `--ablation-sensitivity` (both profiles)                 | `*/ablation_sensitivity_*`                                                | `fig_ablation_sensitivity.py`                                       |
+| Figure 8                                      | `--checkpoint-sweep` (needs `--all-checkpoints`)         | `sudoku/pf_checkpoint_sweep`                                              | `fig_checkpoint.py`                                                 |
 
 `assets/runs/README.md` lists every cached directory with the protocol that produced it
 (`assets/experiments_log.json` has the same in JSON). `--analysis` (paired statistics,
@@ -184,11 +185,11 @@ Paper Table 4. Common to Sudoku-Extreme and Maze-Hard: S = 16 particles, N = 48 
 steps, tau_ESS = 0.3 (resample when ESS < tau_ESS S, systematic resampling), 5 folds with
 fold seed 31. The inner depth M is the checkpoint's trained value, not a free parameter.
 
-| Benchmark | sigma | beta | M | Seeds | Design |
-|---|---|---|---|---|---|
-| Sudoku-Extreme | 0.3 | 0.25 | 6 | 31, 32, 33, 34, 35 | 5 seeds x 5 folds, ± seed-fold s.d. |
-| Maze-Hard | 0.5 | 1.0 | 4 | 31, 41, 59, 83, 109 | 5 seeds x 5 folds, ± seed-fold s.d. |
-| PPBench | 0.3 | 0.25 | 4 | 31-35 | 5 seeds, one fold, tau_ESS = 0.5, ± seed s.d. |
+| Benchmark      | sigma | beta | M   | Seeds               | Design                                        |
+| -------------- | ----- | ---- | --- | ------------------- | --------------------------------------------- |
+| Sudoku-Extreme | 0.3   | 0.25 | 6   | 31, 32, 33, 34, 35  | 5 seeds x 5 folds, ± seed-fold s.d.           |
+| Maze-Hard      | 0.5   | 1.0  | 4   | 31, 41, 59, 83, 109 | 5 seeds x 5 folds, ± seed-fold s.d.           |
+| PPBench        | 0.3   | 0.25 | 4   | 31-35               | 5 seeds, one fold, tau_ESS = 0.5, ± seed s.d. |
 
 `scripts/exps/run_pf.py --profile <name>` applies these defaults; every flag can be
 overridden (`--sigma`, `--beta`, `--ess-threshold`, `--particles`, `--total-steps`,
@@ -233,23 +234,23 @@ pf = BIGRFilter(f, TRMCoreQHead(trm), TRMCoreDecoder(trm),
 
 ## Provenance
 
-* **Committed:** all code used for the paper; every run summary behind every table and
+- **Committed:** all code used for the paper; every run summary behind every table and
   figure; the evidence register; the PPBench splits; the cohort index files; the training
   configs; the figures.
-* **Hosted on the Hub:** the checkpoints, the intermediate checkpoints and the raw particle
+- **Hosted on the Hub:** the checkpoints, the intermediate checkpoints and the raw particle
   traces (3.7 GB). The CSVs derived from the traces are committed, so every table rebuilds
   without them.
-* **From training logs:** `sudoku/q_training` and `pf_checkpoint_sweep/training_progress.csv`
+- **From training logs:** `sudoku/q_training` and `pf_checkpoint_sweep/training_progress.csv`
   are Lightning logs written by `scripts/data/collect_training_logs.py`; Table 3
   (`h100_timing.md`) is the output of `--timing` on the paper's H100.
-* **Hardware sensitivity:** the DF splits and the Table 11 depth profiles are defined by the
+- **Hardware sensitivity:** the DF splits and the Table 11 depth profiles are defined by the
   paper's bfloat16 runs on an H100; the deterministic predictions recorded in the traces
   score 0 of 1,427 and 0 of 134 on the two DF splits. In float32, as the model runs on Apple
   and CPU backends, about 40% of the Sudoku-Extreme DF puzzles solve deterministically and
   the PPBench depth profiles move by one to three puzzles; the Maze-Hard DF split stays at 0%.
-* **Needs regenerated arrays:** `run_early_stopping.py` reads the per-step Q-logit arrays of
+- **Needs regenerated arrays:** `run_early_stopping.py` reads the per-step Q-logit arrays of
   the single-seed runs, which `--main-result-quick` regenerates; its output is committed.
-* **Figure 1 in the camera-ready PDF** was rendered from the single-seed 5-fold runs
+- **Figure 1 in the camera-ready PDF** was rendered from the single-seed 5-fold runs
   (`regenerate_figures.sh --quick`); the default here renders the 5 seeds x 5 folds protocol
   of Table 1. The two agree to within 0.1 points; the legend uses Table 1's name for the
   beta = 0 arm, "single rollout".
@@ -266,8 +267,8 @@ pf = BIGRFilter(f, TRMCoreQHead(trm), TRMCoreDecoder(trm),
 }
 ```
 
-Paper page: <https://openreview.net/forum?id=nZD0FHMUmR>. Questions about the code:
-andy.corbett@digilab.ai.
+Paper: <https://openreview.net/forum?id=nZD0FHMUmR> (OpenReview), <https://arxiv.org/abs/2605.25230> (arXiv).
+Correspondence: andy.corbett@digilab.ai.
 
 ## Licence and acknowledgements
 
