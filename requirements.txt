@@ -17,7 +17,7 @@ omegaconf==2.3.0
 einops==0.8.2
 rich==14.3.3
 pydantic==2.12.5
-pillow==12.2.0
+pillow==13.0.0
 click==8.3.1
 huggingface-hub==1.12.0
 
